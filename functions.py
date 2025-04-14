@@ -13,7 +13,7 @@ def get_answer(user_input):
     payload = {
         "inputs": prompt,
         "parameters": {
-            "max_new_tokens": 512,
+            "max_new_tokens": 1024,
             "return_full_text": False,
             "temperature": 0.7
         }
@@ -32,8 +32,9 @@ def submit(user_input):
     else:
         try:
             answer = get_answer(user_input)
-            config.history += f"\nJaison: {answer}"
-            config.console.print(config.Markdown(answer))
+            config.history += f"\nUsuário: {user_input}\nAssistente: {answer}"
+            config.console.clear()
+            config.console.print(answer)
         except Exception as e:
             config.console.print(f"[bold red]Erro ao processar a solicitação:[/bold red] {e}")
         return answer
