@@ -28,7 +28,7 @@
 ## 🧰 Bibliotecas Utilizadas
 
 ```bash
-pip install speechrecognition gTTS pyttsx3 openai python-dotenv
+pip install openai speechrecognition gTTS pyttsx3 openai python-dotenv
 ```
 
 ---
