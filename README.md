@@ -1,113 +1,62 @@
 # Jaison AI 🤖
 
-**Jaison AI** é um assistente pessoal inteligente que funciona por comandos de voz em um Raspberry Pi. Integrado com a API ChatGPT, responde perguntas e realiza tarefas de forma natural. O sistema possui design modular e eficiente dissipação de calor, sendo facilmente personalizável e expansível.
+Jaison AI é um assistente pessoal inteligente, criado para rodar em um Raspberry Pi. Ele integra a API do ChatGPT e permite interações por voz, proporcionando respostas inteligentes e naturais, com foco em uma experiência de usuário fluida e eficiente.
 
----
+## 🚀 Funcionalidades
 
-## 🚀 Características
+- **Comandos de voz**: O Jaison AI escuta e responde a comandos de voz, realizando tarefas de acordo com as solicitações.
+- **Integração com ChatGPT**: O assistente utiliza a API do ChatGPT para oferecer respostas contextuais e inteligentes.
+- **Personalização**: A arquitetura modular do sistema permite que você ajuste e adicione novas funcionalidades facilmente.
+- **Performance otimizada**: O projeto foi desenvolvido para ser eficiente, com foco em baixo custo e boa performance em dispositivos como o Raspberry Pi.
 
-- 🎤 Ativação por voz com o comando **"Olá, Jaison"**
-- 🧠 Integração com **ChatGPT (OpenAI)**
-- 🔊 Respostas por **síntese de voz**
-- 🧱 Design modular com **caixa 3D impressa**
-- 💨 Sistema de **resfriamento com ventilação e dissipadores**
-- 🔁 Modo de escuta contínua (em desenvolvimento)
+## 🔧 Instalação
 
----
+### Pré-requisitos
 
-## 📦 Requisitos
+- **Python 3.7+**: Certifique-se de ter o Python instalado na sua máquina.
+- **Raspberry Pi** ou outro sistema de baixo custo.
+- **Chave da API do ChatGPT**: Você precisará de uma chave válida para interagir com o ChatGPT.
 
-- **Raspberry Pi 4** (ou superior)
-- **Microfone USB** de boa qualidade
-- **Caixa de som** compatível com o Pi
-- **Python 3.7+**
-- Conexão com a internet
+### Passos
 
----
+1. Clone o repositório para sua máquina local:
 
-## 🧰 Bibliotecas Utilizadas
+   ```bash
+   git clone https://github.com/ltisistemas/jaison-ai.git
+   cd jaison-ai
+   ```
 
-```bash
-pip install openai speechrecognition gTTS pyttsx3 openai python-dotenv
-```
+2. Instale as dependências:
 
----
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## ⚙️ Configuração
+3. Configure as variáveis de ambiente necessárias, como a chave de API do ChatGPT:
 
-### 1. Clonar o repositório
+   - Crie um arquivo `.env` com o seguinte conteúdo:
 
-```bash
-git clone https://github.com/seu-usuario/jaison-ai.git
-cd jaison-ai
-```
+   ```bash
+   CHATGPT_API_KEY=your_api_key_here
+   ```
 
-### 2. Configurar a chave da API OpenAI
+4. Execute o assistente:
 
-Crie um arquivo `.env` com sua chave:
+   ```bash
+   python main.py
+   ```
 
-```env
-OPENAI_API_KEY="sua_chave_aqui"
-```
+## 📝 Estrutura do Repositório
 
-### 3. Conectar microfone e caixa de som
+- **`main.py`**: Ponto de entrada para iniciar o assistente.
+- **`app.py`**: Script responsável por configurar e iniciar o sistema.
+- **`listen.py`**: Responsável por captar e processar os comandos de voz.
+- **`prompts.py`**: Define os prompts utilizados para interagir com a API do ChatGPT.
 
-Verifique se os dispositivos estão funcionando corretamente com o Raspberry Pi.
+## 🛠 Contribuições
 
-### 4. Rodar o assistente
+Contribuições são bem-vindas! Se você tiver ideias ou melhorias para o projeto, basta abrir uma **issue** ou enviar um **pull request**. Sinta-se à vontade para fazer modificações, desde que siga as melhores práticas de codificação.
 
-```bash
-python main.py
-```
+## 📜 Licença
 
----
-
-## 💬 Como funciona
-
-1. O Jaison AI escuta o ambiente aguardando o comando: **"Olá, Jaison"**
-2. Ao detectar a ativação, inicia uma conversa por voz.
-3. Envia a sua pergunta para o ChatGPT e responde com voz sintetizada.
-4. Permanece em escuta até que a interação seja encerrada.
-
----
-
-## 🛠️ Personalização
-
-- **Frase de ativação** → Altere no código para o que quiser.
-- **Voz do assistente** → Pode ser trocada por outras bibliotecas TTS.
-- **Design físico** → A estrutura 3D pode ser personalizada conforme seu gosto.
-- **Integração com APIs** → Adicione suporte a dispositivos IoT, calendários, e mais.
-
----
-
-## 📈 Roadmap (em breve)
-
-- [ ] Interface com visor LCD ou e-ink
-- [ ] Modo escuta contínua com wake word detector otimizado
-- [ ] Controle de dispositivos domésticos
-- [ ] App mobile para controle remoto
-
----
-
-## 🤝 Contribuições
-
-Contribuições são muito bem-vindas! Faça um fork, crie uma branch com sua feature, e envie um pull request! 💡
-
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a **MIT License**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
-## 📬 Contato
-
-Dúvidas, sugestões ou ideias? Fale comigo:
-
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- E-mail: seu-email@dominio.com
-
----
-
-Feito com 💙 e Python por **[Seu Nome]**
+Este projeto é licenciado sob a licença **MIT**. Consulte o arquivo [LICENSE](LICENSE) para mais informações.
